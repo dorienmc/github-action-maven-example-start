@@ -51,6 +51,7 @@ jobs:
   
   steps:
    - uses: actions/checkout@v2
+   - run: echo ${{ secrets.DOCKER_REPO }}
    - name: Login to Docker Hub
      run: docker login -u ${{ secrets.DOCKER_USENAME }} -p ${{ secrets.DOCKER_PASSWORD }}
    - name: Build container image
